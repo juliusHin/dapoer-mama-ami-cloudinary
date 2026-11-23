@@ -2,6 +2,22 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.6] - 2026-11-23
+
+Implementasi Issue #3 (alur kerja template `docs/fitur/fitur1.md` dijalankan pertama kali).
+
+### Ditambahkan (Added)
+* **Halaman `/login`** (`src/pages/Login.jsx`) — form email + kata sandi via Firebase Auth, pesan error ramah Bahasa Indonesia (kredensial salah / terlalu banyak percobaan / koneksi), indikator *Memeriksa...*, tanpa tombol daftar (SEC-02), auto-redirect ke `/admin` bila sudah login.
+* **Placeholder `/admin`** (`src/pages/Admin.jsx`) — konfirmasi login berhasil + tombol Keluar & kembali ke beranda; digantikan dasbor penuh pada Issue #4.
+* `firebase.js` + `getAuth` (ekspor `auth`).
+
+### Diubah (Changed)
+* `App.jsx` + rute `/login` dan `/admin`.
+* `docs/fitur/fitur1.md` diisi nama fitur; `docs/fitur/fitur.md` **dihapus** (duplikat identik, persetujuan pengguna).
+
+### Diuji
+* `npm run build` lolos. TC-13/TC-14/SEC-02 menunggu uji manual pengguna (`npm run dev` → buka `/login`).
+
 ## [1.5] - 2026-11-23
 
 Manajemen proyek pindah ke GitHub Issues (4 milestone Fase 1–4, 10 issues) + implementasi Issue #1 & #2.

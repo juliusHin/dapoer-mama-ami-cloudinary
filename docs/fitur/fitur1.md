@@ -6,7 +6,7 @@ Baca:
 - AGENTS.md
 
 Saya ingin mengimplementasikan fitur:
-[ISI NAMA FITUR]
+Halaman Login Admin (FR-6 PRD.md, GitHub Issue #3)
 
 Sebelum coding:
 1. Periksa kondisi proyek.

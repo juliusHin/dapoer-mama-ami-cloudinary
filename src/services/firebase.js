@@ -1,4 +1,5 @@
 import { initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
 import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy } from 'firebase/firestore'
 
 const app = initializeApp({
@@ -9,6 +10,7 @@ const app = initializeApp({
 })
 
 export const db = getFirestore(app)
+export const auth = getAuth(app)
 
 // Default aman saat settings/general belum dibuat / terjadi error baca.
 // shortcut: menyembunyikan error berarti admin tak menyadari salah config; upgrade: tampilkan banner error saat mode admin hadir (Tahap 3)
