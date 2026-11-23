@@ -26,6 +26,7 @@ export default function Footer({ waNumber }) {
           </p>
         </div>
       </div>
+      <p className="font-hand py-2 text-center text-2xl text-white/90">— Mama Ami, Tangerang</p>
       <p className="border-t border-white/10 py-3 text-center text-xs text-white/60">
         © {new Date().getFullYear()} Dapoer Mama Ami. Semua masakan dimasak fresh tanpa pengawet.
       </p>

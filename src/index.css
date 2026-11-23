@@ -10,10 +10,43 @@
   --color-campaign: #A63939;
   --font-heading: "Lora", serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
+  --font-hand: "Caveat", cursive;
 }
 
 body {
   @apply bg-cream text-ink font-body antialiased;
+}
+
+/* Sentuhan handmade: tulisan tangan, bayangan tegas, polaroid miring */
+.font-hand {
+  font-family: var(--font-hand);
+}
+.shadow-hard {
+  box-shadow: 4px 4px 0 rgba(38, 38, 38, 0.85);
+}
+.tilt-l {
+  rotate: -2deg;
+}
+.tilt-r {
+  rotate: 2deg;
+}
+
+/* Strip nama menu berjalan pelan */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
 }
 
 /* Hero: gradien hijau gelap + pola titik halus */

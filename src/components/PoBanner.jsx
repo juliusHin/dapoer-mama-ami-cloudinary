@@ -27,16 +27,16 @@ export default function PoBanner({ settings }) {
               ? [settings.po_title, settings.delivery_date && `Kirim: ${settings.delivery_date}`, QUOTA_LABEL[settings.quota_status] || '']
                   .filter(Boolean)
                   .join(' • ')
-              : 'Tetap terima pesanan acara / nasi kotak — gabung info jadwal PO berikutnya.'}
+              : 'PO kloter ini sudah penuh. Nanti kami kabari lagi ya — pesanan acara tetap kami terima.'}
           </p>
         </div>
         <a
           href={open ? '#katalog' : infoHref}
           target={open ? undefined : '_blank'}
           rel="noopener noreferrer"
-          className="shrink-0 rounded-full bg-cta px-5 py-2.5 text-sm font-semibold text-white hover:bg-cta/90"
+          className="shrink-0 rounded-lg bg-cta px-5 py-2.5 text-sm font-semibold text-white shadow-hard transition hover:-translate-y-0.5"
         >
-          {open ? 'Lihat Menu PO' : 'Gabung Info Jadwal PO'}
+          {open ? 'Lihat Menu PO' : 'Kabari saya saat PO buka'}
         </a>
       </div>
     </section>

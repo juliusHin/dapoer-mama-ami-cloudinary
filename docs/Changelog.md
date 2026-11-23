@@ -2,6 +2,20 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.0] - 2026-11-23
+
+Revisi desain **"de-AI-kan"** — arah *homely handwritten* (disetujui pengguna setelah feedback "website seperti AI banget"). Murni lapisan tampilan & copy; logika/data/admin tak berubah.
+
+### Diubah (Changed)
+* **Fondasi**: font *Caveat* (aksen tulisan tangan) di `index.html`; `index.css` + util `.font-hand`, `.shadow-hard` (bayangan tegas offset), `.tilt-l/.tilt-r` (polaroid miring), keyframes marquee (hormati `prefers-reduced-motion`).
+* **Hero**: gradien gelap rata tengah → krem rata kiri, stempel Caveat "— dari dapur rumah kami, Tangerang", judul "Masakan rumah Mama Ami.", polaroid logo ber-tape miring, tombol kotak + hard shadow.
+* **DietInfo**: 3 kartu seragam + ikon → 1 kartu hangat: paragraf cerita + garis bawah coret tangan (SVG) + daftar centang Caveat (info FR-03 & TC-04 tetap lengkap).
+* **MenuCard**: pil warna → label bergaris bawah bergelombang, kartu polaroid border tegas, tombol `rounded-lg` + hard shadow.
+* **CampaignSection/EventSection**: kartu polaroid miring berselang + tape CSS, catatan Caveat "pesan sebelum Natal — kuota terbatas!".
+* **PoBanner/Footer**: copy manusiawi ("PO kloter ini sudah penuh. Nanti kami kabari lagi ya…", "Menu lagi disiapkan — tanya dulu aja ya"), tanda tangan footer "— Mama Ami, Tangerang".
+* **Home**: + strip marquee nama menu berjalan pelan (hanya saat ada menu).
+* Copy hero lama ("Bikin Jatuh Hati", kata miring berwarna, chips ikon) dihapus.
+
 ## [1.9] - 2026-11-23
 
 Implementasi Issue #6 via subagent-driven development (2 task; lulus gerbang review tanpa perlu fix loop — pelajaran review #5 ditanam di brief).

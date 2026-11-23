@@ -76,6 +76,16 @@ export default function Home() {
       <Hero campaignActive={campaignActive} />
       {campaignActive && <Countdown end={settings.campaign_end} label={settings.campaign_name} />}
 
+      {menus?.length > 0 && (
+        <div className="overflow-hidden border-y-2 border-ink/10 bg-white py-2" aria-hidden="true">
+          <div className="animate-marquee flex w-max gap-10 whitespace-nowrap font-hand text-xl text-brand">
+            {[...menus, ...menus].map((m, i) => (
+              <span key={i}>{m.name} &#10038;</span>
+            ))}
+          </div>
+        </div>
+      )}
+
       <DietInfo summary={settings.kitchen_rules_summary} />
 
       <section id="katalog" className="mx-auto max-w-6xl px-4 pb-12">
@@ -118,7 +128,7 @@ export default function Home() {
             <div className="rounded-xl bg-white p-8 text-center text-sm text-muted">
               <SearchX className="mx-auto mb-2 h-6 w-6" aria-hidden="true" />
               {menus.length === 0
-                ? 'Katalog menu akan segera hadir. Hubungi kami via WhatsApp untuk info menu terbaru.'
+                ? 'Menu lagi disiapkan — tanya dulu aja ya lewat WhatsApp, kami kabari menu terbaru.'
                 : 'Menu tidak ditemukan, coba kata kunci lain.'}
             </div>
           ) : (
