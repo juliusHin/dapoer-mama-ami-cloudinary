@@ -2,6 +2,18 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.7] - 2026-11-23
+
+Implementasi Issue #4 — dasbor `/admin` terproteksi + Tab 1.
+
+### Ditambahkan (Added)
+* **Dasbor `/admin` penuh** (tulis ulang placeholder): proteksi `onAuthStateChanged` (belum login → redirect `/login`, SEC-01), tombol Keluar (TC-18), navigasi 3 tab (Tab 2/3 stub menunggu Issue #5/#6).
+* **Tab 1 Status PO & Kampanye**: saklar BUKA/TUTUP, judul kloter, tanggal kirim, dropdown kuota, nomor WA, link grup (fallback chat admin), nama + tanggal mulai/berakhir kampanye (`type=date` → ISO otomatis), indikator Menyimpan/Tersimpan ✓/gagal.
+* `firebase.js` + `saveSettings()` — `setDoc` merge + `updated_at: serverTimestamp()` + hapus field typo lama `update_at` via `deleteField()`.
+
+### Diuji
+* `npm run build` ✅ (655ms). TC-01/TC-02/TC-18/SEC-01 siap uji manual: `npm run dev` → login → ganti status → cek halaman depan.
+
 ## [1.6] - 2026-11-23
 
 Implementasi Issue #3 (alur kerja template `docs/fitur/fitur1.md` dijalankan pertama kali).

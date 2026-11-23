@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy, setDoc, serverTimestamp, deleteField } from 'firebase/firestore'
 
 const app = initializeApp({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -70,3 +70,12 @@ async function getAll(name) {
 
 export const getMenus = () => getAll('menus')
 export const getEvents = () => getAll('events_gallery')
+
+// Simpan pengaturan (merge) + rapikan field typo lama `update_at`.
+export async function saveSettings(data) {
+  await setDoc(
+    doc(db, 'settings', 'general'),
+    { ...data, updated_at: serverTimestamp(), update_at: deleteField() },
+    { merge: true },
+  )
+}
