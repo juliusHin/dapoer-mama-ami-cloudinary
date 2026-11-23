@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #FAF8F5;
+  --color-brand: #2E5A44;
+  --color-cta: #D96B27;
+  --color-ink: #262626;
+  --color-muted: #66625E;
+  --color-sand: #EAE5DF;
+  --color-campaign: #A63939;
+  --font-heading: "Lora", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  @apply bg-cream text-ink font-body antialiased;
+}
