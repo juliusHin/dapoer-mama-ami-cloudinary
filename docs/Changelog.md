@@ -2,6 +2,19 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.8] - 2026-11-23
+
+Implementasi Issue #5 via **subagent-driven development** (implementer + reviewer spesifikasi + reviewer kualitas per task, 2 putaran perbaikan).
+
+### Ditambahkan (Added)
+* **`src/services/cloudinary.js`** — `uploadImage(file)`: validasi tipe (`jpg/png/webp`) & ukuran ≤5 MB sebelum kirim (SEC-03), POST unsigned preset, URL hasil disisipkan `f_auto,q_auto,w_800`; error non-JSON (502/503) ditangani dengan pesan Indonesia.
+* **`src/services/firebase.js`** — `addMenu` / `updateMenu` (merge + `updated_at`) / `deleteMenu`.
+* **`src/components/MenuManager.jsx`** — Tab 2 dasbor: daftar menu (thumbnail, harga Rupiah, saklar cepat "Ikut PO", Edit, Hapus + konfirmasi), form tambah/edit (datalist 5 kategori + ketik bebas, 3 checkbox label diet, foto dengan preview 4:3), indikator "Sedang mengunggah foto..." + Simpan terkunci saat upload (edge case USER_FLOW), validasi harga bulat >0 (anti "35.000"→Rp 35), guard crash batal-saat-upload, retry muat data, revoke objectURL, badge sukses auto-hilang.
+* `Admin.jsx` Tab 2 merender `MenuManager`.
+
+### Diuji
+* 2× gerbang review (spesifikasi 7/7 PATUH; kualitas: 3 bug ditemukan & diperbaiki — urutan `res.ok`/JSON, crash pasca-tutup, validasi harga). `npm run build` ✅. TC-15/TC-16/SEC-03 siap uji manual via `npm run dev`.
+
 ## [1.7] - 2026-11-23
 
 Implementasi Issue #4 — dasbor `/admin` terproteksi + Tab 1.

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth, getSettings, saveSettings } from '../services/firebase.js'
+import MenuManager from '../components/MenuManager.jsx'
 import { Loader2, LogOut, Check, AlertCircle } from 'lucide-react'
 
 const QUOTA_OPTIONS = [
@@ -132,7 +133,7 @@ export default function Admin() {
           </section>
         )}
 
-        {tab === 2 && <p className="rounded-2xl bg-white p-6 text-sm text-muted shadow-sm">Kelola menu &amp; unggah foto — menyusul (Issue #5).</p>}
+        {tab === 2 && <MenuManager />}
         {tab === 3 && <p className="rounded-2xl bg-white p-6 text-sm text-muted shadow-sm">Galeri acara — menyusul (Issue #6).</p>}
       </div>
     </main>

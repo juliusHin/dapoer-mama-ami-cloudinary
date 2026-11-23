@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy, setDoc, serverTimestamp, deleteField } from 'firebase/firestore'
+import { getFirestore, doc, getDoc, collection, getDocs, query, orderBy, setDoc, addDoc, deleteDoc, serverTimestamp, deleteField } from 'firebase/firestore'
 
 const app = initializeApp({
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -79,3 +79,11 @@ export async function saveSettings(data) {
     { merge: true },
   )
 }
+
+export const addMenu = (data) =>
+  addDoc(collection(db, 'menus'), { ...data, created_at: serverTimestamp(), updated_at: serverTimestamp() })
+
+export const updateMenu = (id, data) =>
+  setDoc(doc(db, 'menus', id), { ...data, updated_at: serverTimestamp() }, { merge: true })
+
+export const deleteMenu = (id) => deleteDoc(doc(db, 'menus', id))
