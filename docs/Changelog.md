@@ -2,6 +2,20 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.5] - 2026-11-23
+
+Manajemen proyek pindah ke GitHub Issues (4 milestone Fase 1–4, 10 issues) + implementasi Issue #1 & #2.
+
+### Ditambahkan (Added)
+* **GitHub** — Milestone `Fase 1: Konten & Hero` s.d. `Fase 4: Go-Live` + 10 issues berisi checklist & referensi TC (#1–#10).
+* **`docs/templates/menu_template.md`** — Formulir kosong siap isi untuk orang tua: tabel Menu Kuliner / Hampers Natal / Galeri Acara + contoh terisi + panduan foto (menutup Issue #1).
+* **Hero "wow"** (menutup Issue #2): `Hero.jsx` (gradien hijau gelap + pola titik, judul besar Lora, 3 chips, CTA kampanye kondisional), `Countdown.jsx` (hitung mundur live per detik dari `campaign_end`, hilang otomatis), animasi CSS `fade-up` bertahap di `index.css`, anchor `#hampers`.
+* `firebase.js` + `campaignTimeLeft()` — sisa waktu s.d. akhir hari kampanye (lokal WIB).
+
+### Diuji
+* Unit test `campaignTimeLeft` 5 kasus (sebelum/hari terakhir/lewat/kosong/jangka panjang) — lulus semua.
+* `npm run build` lolos.
+
 ## [1.4] - 2026-11-23
 
 Kampanye musiman **Hampers Natal** (otomatis by tanggal) — desain disetujui pengguna.

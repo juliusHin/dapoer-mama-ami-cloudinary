@@ -4,6 +4,8 @@ import { getSettings, getMenus, getEvents, FALLBACK_SETTINGS, isCampaignActive }
 import Navbar from '../components/Navbar.jsx'
 import PoBanner from '../components/PoBanner.jsx'
 import CampaignSection from '../components/CampaignSection.jsx'
+import Hero from '../components/Hero.jsx'
+import Countdown from '../components/Countdown.jsx'
 import DietInfo from '../components/DietInfo.jsx'
 import MenuCard from '../components/MenuCard.jsx'
 import EventSection from '../components/EventSection.jsx'
@@ -71,25 +73,8 @@ export default function Home() {
         <CampaignSection name={settings.campaign_name} items={hampers} waNumber={settings.whatsapp_number} />
       )}
 
-      <section className="bg-gradient-to-b from-white to-cream py-14 text-center">
-        <div className="mx-auto max-w-3xl px-4">
-          <h1 className="font-heading text-3xl font-bold text-brand sm:text-4xl">
-            Masakan Nabati Rumahan yang Bikin Jatuh Hati
-          </h1>
-          <p className="mx-auto mt-3 max-w-xl text-sm text-muted sm:text-base">
-            Masakan vegetarian homemade tanpa bawang, dimasak fresh dengan bahan segar.
-            Bisa request 100% vegan atau pakai bawang sesuai selera Anda.
-          </p>
-          <div className="mt-6 flex flex-wrap justify-center gap-3">
-            <a href="#katalog" className="rounded-full bg-cta px-6 py-3 text-sm font-semibold text-white hover:bg-cta/90">
-              {poOpen ? 'Pesan Kloter Ini' : 'Lihat Katalog Menu'}
-            </a>
-            <a href="#acara" className="rounded-full border border-brand/40 bg-white px-6 py-3 text-sm font-semibold text-brand hover:bg-sand">
-              Lihat Paket Acara
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero campaignActive={campaignActive} />
+      {campaignActive && <Countdown end={settings.campaign_end} label={settings.campaign_name} />}
 
       <DietInfo summary={settings.kitchen_rules_summary} />
 

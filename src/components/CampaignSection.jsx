@@ -3,7 +3,7 @@ import MenuCard from './MenuCard.jsx'
 
 export default function CampaignSection({ name, items, waNumber }) {
   return (
-    <section className="bg-campaign py-10 text-white">
+    <section id="hampers" className="bg-campaign py-10 text-white">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex items-center gap-2">
           <Gift className="h-6 w-6" aria-hidden="true" />

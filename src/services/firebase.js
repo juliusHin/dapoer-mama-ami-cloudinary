@@ -44,6 +44,23 @@ export async function getSettings() {
   }
 }
 
+// Sisa waktu menuju akhir hari campaign_end (23:59:59 lokal WIB) atau null bila sudah lewat/kosong.
+// shortcut: end-of-day kasar tanpa jam custom di database; upgrade: field jam bila admin butuh tenggat selain tengah malam
+export function campaignTimeLeft(endStr, now = new Date()) {
+  if (!endStr) return null
+  const [y, m, d] = endStr.split('-').map(Number)
+  if (!y || !m || !d) return null
+  const end = new Date(y, m - 1, d, 23, 59, 59, 999)
+  const secs = Math.floor((end - now) / 1000)
+  if (secs <= 0) return null
+  return {
+    days: Math.floor(secs / 86400),
+    hours: Math.floor((secs % 86400) / 3600),
+    minutes: Math.floor((secs % 3600) / 60),
+    seconds: secs % 60,
+  }
+}
+
 async function getAll(name) {
   const snap = await getDocs(query(collection(db, name), orderBy('created_at', 'desc')))
   return snap.docs.map((d) => ({ id: d.id, ...d.data() }))
