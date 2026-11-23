@@ -1,5 +1,9 @@
 import { Gift } from 'lucide-react'
 import MenuCard from './MenuCard.jsx'
+import PlaceholderArt from './PlaceholderArt.jsx'
+
+// Kartu contoh saat data hampers belum diisi — hilang otomatis begitu paket asli masuk.
+const DEMO_HAMPERS = ['Contoh Hampers Mini', 'Contoh Hampers Classic', 'Contoh Hampers Premium']
 
 export default function CampaignSection({ name, items, waNumber }) {
   return (
@@ -14,10 +18,23 @@ export default function CampaignSection({ name, items, waNumber }) {
         </p>
 
         {items.length === 0 ? (
-          <p className="mt-6 rounded-lg border-2 border-white/60 bg-white/10 p-5 text-sm text-white/90">
-            Daftar paket hampers lagi disiapkan — tanya dulu aja ya lewat WhatsApp di bagian bawah
-            halaman ini.
-          </p>
+          <div>
+            <p className="font-hand mb-4 text-lg text-white/85">
+              contoh tampilan — daftar paket asli menyusul, tanya dulu aja ya lewat WhatsApp
+            </p>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {DEMO_HAMPERS.map((title, i) => (
+                <div key={title} className={i % 2 ? 'tilt-r' : 'tilt-l'}>
+                  <div className="border-2 border-white/80 bg-white p-3 shadow-hard">
+                    <div className="aspect-[4/3] overflow-hidden bg-sand">
+                      <PlaceholderArt label={title} seed={title} />
+                    </div>
+                    <h3 className="font-hand px-1 pt-3 text-center text-xl text-muted">{title}</h3>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         ) : (
           <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {items.map((m) => (

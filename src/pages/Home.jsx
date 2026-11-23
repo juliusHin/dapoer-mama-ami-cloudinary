@@ -10,6 +10,25 @@ import DietInfo from '../components/DietInfo.jsx'
 import MenuCard from '../components/MenuCard.jsx'
 import EventSection from '../components/EventSection.jsx'
 import Footer from '../components/Footer.jsx'
+import PlaceholderArt from '../components/PlaceholderArt.jsx'
+
+// Kartu contoh saat katalog masih kosong — hilang otomatis begitu menu asli masuk.
+const DEMO_MENUS = [
+  ['Contoh Lauk Utama', 'rendang jamur suwir'],
+  ['Contoh Paket Nasi', 'nasi bakar kemangi'],
+  ['Contoh Camilan', 'risoles mayon'],
+]
+
+function DemoCard({ title, seed }) {
+  return (
+    <div className="border-2 border-ink/80 bg-white p-3 shadow-hard">
+      <div className="aspect-[4/3] overflow-hidden bg-sand">
+        <PlaceholderArt label={title} seed={seed} />
+      </div>
+      <h3 className="font-hand px-1 pt-3 text-center text-xl text-muted">{title}</h3>
+    </div>
+  )
+}
 
 function MenuSkeleton() {
   return (
@@ -124,12 +143,21 @@ export default function Home() {
         <div className="mt-6">
           {menus === null ? (
             <MenuSkeleton />
+          ) : menus.length === 0 ? (
+            <div>
+              <p className="font-hand mb-4 text-lg text-muted">
+                contoh tampilan — menu asli menyusul, tanya dulu aja ya lewat WhatsApp
+              </p>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {DEMO_MENUS.map(([title, seed]) => (
+                  <DemoCard key={title} title={title} seed={seed} />
+                ))}
+              </div>
+            </div>
           ) : filtered.length === 0 ? (
             <div className="rounded-xl bg-white p-8 text-center text-sm text-muted">
               <SearchX className="mx-auto mb-2 h-6 w-6" aria-hidden="true" />
-              {menus.length === 0
-                ? 'Menu lagi disiapkan — tanya dulu aja ya lewat WhatsApp, kami kabari menu terbaru.'
-                : 'Menu tidak ditemukan, coba kata kunci lain.'}
+              Menu tidak ditemukan, coba kata kunci lain.
             </div>
           ) : (
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

@@ -2,6 +2,18 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.2] - 2026-11-23
+
+Mode contoh tampilan (permintaan pengguna: ingin melihat placeholder di halaman pengunjung meski data belum ada).
+
+### Diubah (Changed)
+* **`Home.jsx`** — katalog kosong kini menampilkan 3 kartu polaroid sketsa contoh (Lauk Utama/Paket Nasi/Camilan) + catatan Caveat "contoh tampilan — menu asli menyusul"; kartu contoh tanpa tombol WhatsApp (menu fiktif tidak bisa dipesan). Pencarian tetap menampilkan pesan "tidak ditemukan".
+* **`CampaignSection.jsx`** — section hampers kosong menampilkan 3 kartu sketsa contoh miring (Mini/Classic/Premium) + catatan sama.
+* Kedua mode contoh hilang otomatis begitu dokumen menu asli dibuat (kondisi `length === 0`).
+
+### Diuji
+`npm run build` ✅. Visual: `npm run dev` → halaman `/` kini tampak hidup meski belum ada data.
+
 ## [2.1] - 2026-11-23
 
 Placeholder foto sketsa + photo brief (permintaan pengguna: bantu developer/desainer/AI membuat gambar sesuai slot).
