@@ -2,6 +2,21 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.9] - 2026-11-23
+
+Implementasi Issue #6 via subagent-driven development (2 task; lulus gerbang review tanpa perlu fix loop — pelajaran review #5 ditanam di brief).
+
+### Ditambahkan (Added)
+* **`src/services/firebase.js`** — `addEvent` / `updateEvent` / `deleteEvent` (koleksi `events_gallery`).
+* **`src/components/EventManager.jsx`** — Tab 3 dasbor: daftar galeri (thumbnail, judul, harga mulai Rupiah, Edit, Hapus + konfirmasi), form tambah/edit (judul, deskripsi, harga mulai per kotak dengan validasi bulat >0, syarat min. order, foto upload + preview 4:3), indikator upload + Simpan terkunci, guard pasca-tutup, retry muat, revoke objectURL, badge sukses 4 detik.
+* `Admin.jsx` Tab 3 merender `EventManager`.
+
+### Catatan Teknis
+* `EventManager` sengaja duplikat pola `MenuManager` (bukan diabstraksikan). shortcut: baru digeneralisasi bila muncul entity CRUD ketiga.
+
+### Diuji
+* Review spesifikasi 9/9 PATUH; review kualitas LOLOS (6 titik audit, nol bug baru). `npm run build` ✅. TC-17 siap uji manual.
+
 ## [1.8] - 2026-11-23
 
 Implementasi Issue #5 via **subagent-driven development** (implementer + reviewer spesifikasi + reviewer kualitas per task, 2 putaran perbaikan).

@@ -87,3 +87,11 @@ export const updateMenu = (id, data) =>
   setDoc(doc(db, 'menus', id), { ...data, updated_at: serverTimestamp() }, { merge: true })
 
 export const deleteMenu = (id) => deleteDoc(doc(db, 'menus', id))
+
+export const addEvent = (data) =>
+  addDoc(collection(db, 'events_gallery'), { ...data, created_at: serverTimestamp(), updated_at: serverTimestamp() })
+
+export const updateEvent = (id, data) =>
+  setDoc(doc(db, 'events_gallery', id), { ...data, updated_at: serverTimestamp() }, { merge: true })
+
+export const deleteEvent = (id) => deleteDoc(doc(db, 'events_gallery', id))
