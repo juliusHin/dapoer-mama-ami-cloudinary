@@ -1,5 +1,6 @@
 import { MessageCircle } from 'lucide-react'
 import { waLink, poMessage, scheduleMessage, hampersMessage } from '../services/whatsapp.js'
+import PlaceholderArt from './PlaceholderArt.jsx'
 
 const rupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n)
 
@@ -19,13 +20,15 @@ export default function MenuCard({ menu, poOpen, waNumber, variant = 'menu' }) {
   return (
     <article className="flex flex-col border-2 border-ink/80 bg-white p-3 shadow-hard">
       <div className="aspect-[4/3] w-full overflow-hidden bg-sand">
-        {menu.image_url && (
+        {menu.image_url ? (
           <img
             src={menu.image_url}
             alt={menu.name}
             loading="lazy"
             className="h-full w-full object-cover"
           />
+        ) : (
+          <PlaceholderArt label={menu.name} seed={menu.name} />
         )}
       </div>
       <div className="flex flex-1 flex-col gap-1.5 px-1 pb-1 pt-3">

@@ -1,5 +1,6 @@
 import { MessageCircle, CalendarClock } from 'lucide-react'
 import { waLink, eventMessage } from '../services/whatsapp.js'
+import PlaceholderArt from './PlaceholderArt.jsx'
 
 const rupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n)
 
@@ -22,8 +23,10 @@ export default function EventSection({ events, waNumber }) {
             {events.map((e, i) => (
               <article key={e.id} className={`${i % 2 ? 'tilt-r' : 'tilt-l'} border-2 border-ink/80 bg-white p-3 shadow-hard`}>
                 <div className="relative aspect-[4/3] w-full overflow-hidden bg-sand">
-                  {e.image_url && (
+                  {e.image_url ? (
                     <img src={e.image_url} alt={e.title} loading="lazy" className="h-full w-full object-cover" />
+                  ) : (
+                    <PlaceholderArt label={e.title} seed={e.title} />
                   )}
                   <div className="absolute -top-0 left-1/2 h-5 w-20 -translate-x-1/2 -translate-y-1/2 -rotate-3 bg-cta/25" aria-hidden="true" />
                 </div>

@@ -2,6 +2,18 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [2.1] - 2026-11-23
+
+Placeholder foto sketsa + photo brief (permintaan pengguna: bantu developer/desainer/AI membuat gambar sesuai slot).
+
+### Ditambahkan (Added)
+* **`src/components/PlaceholderArt.jsx`** — SVG sketsa tangan (piring beruap / toples kue / pucuk daun, garis tinta brand) yang tampil otomatis saat `image_url` kosong; motif stabil per hash nama; label Caveat "foto {nama} menyusul"; tergantikan otomatis oleh foto asli.
+* Kabelkan ke `MenuCard` (berlaku juga kartu hampers) dan `EventSection`.
+* **`docs/templates/photo_brief.md`** — tabel 5 slot (rasio, ukuran, subjek, larangan), konvensi nama file, dan prompt AI image generator siap pakai per slot.
+
+### Diuji
+`npm run build` ✅. Placeholder terlihat via `npm run dev` pada semua menu/hampers/galeri tanpa foto.
+
 ## [2.0] - 2026-11-23
 
 Revisi desain **"de-AI-kan"** — arah *homely handwritten* (disetujui pengguna setelah feedback "website seperti AI banget"). Murni lapisan tampilan & copy; logika/data/admin tak berubah.
