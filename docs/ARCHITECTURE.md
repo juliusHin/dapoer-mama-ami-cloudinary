@@ -79,7 +79,7 @@ Koleksi ini hanya berisi **1 dokumen tetap** bernama `general` yang mengatur tam
 * **`delivery_date`** *(Teks)* — Informasi jadwal pengiriman makanan (contoh: *"Sabtu, 28 November 2026"*).
 * **`quota_status`** *(Teks: `"tersedia"`, `"hampir_habis"`, atau `"penuh"`)* — Label ketersediaan kuota agar admin tidak perlu memperbarui angka setiap menit.
 * **`whatsapp_number`** *(Teks)* — Nomor WhatsApp admin dengan format kode negara tanpa tanda plus (contoh: `"6281234567890"`).
-* **`whatsapp_group_link`** *(Teks)* — Tautan undangan Grup atau Saluran WhatsApp resmi untuk info jadwal PO berikutnya.
+* **`whatsapp_group_link`** *(Teks)* — Tautan undangan Grup atau Saluran WhatsApp resmi untuk info jadwal PO berikutnya. Boleh kosong: jika kosong, tombol info PO otomatis mengarah ke chat admin.
 * **`kitchen_rules_summary`** *(Teks)* — Ringkasan aturan dapur (standar vegetarian tanpa bawang, bisa *request* vegan atau pakai bawang).
 * **`updated_at`** *(Waktu / Timestamp)* — Waktu terakhir admin mengubah pengaturan PO.
 

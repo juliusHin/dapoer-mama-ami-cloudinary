@@ -78,13 +78,13 @@ Berdasarkan dokumen `ARCHITECTURE.md`, website dibangun dengan arsitektur ringan
 
 ## 8. Hal yang Masih Perlu Dilengkapi Sebelum Mulai
 Sebelum masuk ke tahap pengisian konten dan peluncuran, mohon siapkan informasi berikut bersama orang tua Anda:
-- [ ] **Nama Brand / Usaha Kuliner** dan logo (jika ada).
+- [x] **Nama Brand / Usaha Kuliner** dan logo (jika ada).
 Dapoer Mama Ami. logo ada di folder "images/logos"
-- [ ] **Nomor WhatsApp Admin** yang aktif menerima pesanan (format `62 8778 223 8049`).
+- [x] **Nomor WhatsApp Admin** yang aktif menerima pesanan (format `62 8778 223 8049`).
 - [ ] **Tautan Grup atau Saluran WhatsApp** resmi untuk pengumuman jadwal PO berikutnya. 
 instagram https://www.instagram.com/dapoermamaami/
-- [ ] **Syarat Pesanan Acara / Nasi Kotak** minimal jumlah kotak dan batas waktu pemesanan, misalnya minimal 20 kotak dan pesan H-10.
+- [x] **Syarat Pesanan Acara / Nasi Kotak** minimal jumlah kotak dan batas waktu pemesanan, misalnya minimal 20 kotak dan pesan H-10.
 
-- [ ] **Aturan Pembayaran** ( kuota PO dikunci setelah transfer lunas, sedangkan acara wajib DP 30%).
-- [ ] **Area Layanan Pengiriman** (Tangerang dan Jakarta. di luar area itu diambil sendiri).
+- [x] **Aturan Pembayaran** ( kuota PO dikunci setelah transfer lunas, sedangkan acara wajib DP 30%).
+- [x] **Area Layanan Pengiriman** (Tangerang dan Jakarta. di luar area itu diambil sendiri).
 - [ ] **Daftar Final Menu Awal** beserta harga dan file foto yang sudah selesai diedit. menu menyusul

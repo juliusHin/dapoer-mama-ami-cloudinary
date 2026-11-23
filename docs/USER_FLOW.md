@@ -82,7 +82,7 @@ Karena kloter PO dibuka tidak rutin, alur ini memastikan pengunjung yang datang 
 **Rincian Langkah:**
 1. Pengunjung membuka website dan melihat papan status bertuliskan **PO TUTUP**.
 2. Pada papan status yang sama, tersedia tombol utama **"Gabung Info Jadwal PO Berikutnya"**.
-3. Jika pengunjung tertarik agar tidak ketinggalan kloter berikutnya, mereka menekan tombol tersebut dan langsung diarahkan masuk ke Grup atau Saluran (*Channel*) WhatsApp resmi.
+3. Jika pengunjung tertarik agar tidak ketinggalan kloter berikutnya, mereka menekan tombol tersebut dan langsung diarahkan masuk ke Grup atau Saluran (*Channel*) WhatsApp resmi (atau ke chat langsung admin bila tautan grup belum tersedia).
 4. Pengunjung tetap dapat melihat seluruh galeri foto makanan di halaman tersebut sebagai portofolio masakan orang tua Anda.
 
 ---

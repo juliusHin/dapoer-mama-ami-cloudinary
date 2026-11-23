@@ -2,6 +2,41 @@
 
 Catatan seluruh perubahan dokumen proyek. Format mengikuti [Keep a Changelog](https://keepachangelog.com/).
 
+## [1.4] - 2026-11-23
+
+Kampanye musiman **Hampers Natal** (otomatis by tanggal) — desain disetujui pengguna.
+
+### Ditambahkan (Added)
+* **`PRD.md` FR-08** — Kampanye musiman berbasis tanggal; bullet baru di In-Scope (9.1).
+* **`database_schema.md`** — 3 field baru `settings/general`: `campaign_name`, `campaign_start`, `campaign_end` (+ contoh JSON diperbarui).
+* **`test_plan.md` Modul E** — TC-20 (section tampil saat aktif), TC-21 (hilang di luar periode), TC-22 (templat WA hampers); launch checklist diperluas ke TC-22.
+* **`UI_DESIGN.md`** — Token warna *Holiday Red* `#A63939` khusus section kampanye.
+* **Kode** — `CampaignSection.jsx` (baru, latar merah, grid paket, reuse `MenuCard` mode hampers); `whatsapp.js` + `hampersMessage()`; `firebase.js` + `isCampaignActive()` + field fallback; `Home.jsx` merender section kampanye di bawah banner PO saat aktif; `index.css` + token `campaign`.
+* Paket hampers disimpan sebagai dokumen `menus` berkategori `"Hampers Natal"` (tanpa perubahan schema menus).
+
+## [1.3] - 2026-11-23
+
+Verifikasi Tahap 1 + implementasi Tahap 2 (DEVELOPMENT_PLAN.md).
+
+### Verifikasi
+* Cloudinary ✅ (cloud name `agnchkqe`, preset unsigned berfungsi — logo ter-upload & dipakai sebagai og:image).
+* GitHub ✅ (commit awal ter-push). Firestore: database ada, **rules belum dideploy** (read publik masih 403 — fallback PO TUTUP aktif sesuai desain).
+
+### Ditambahkan (Added) — Aplikasi (Tahap 2)
+* Kerangka Vite + React + Tailwind v4 + React Router + Lucide (`package.json`, `vite.config.js`, `index.html` dengan tag Open Graph & Google Fonts).
+* `src/services/firebase.js` (baca settings/menus/events + fallback PO TUTUP), `src/services/whatsapp.js` (tautan wa.me + 4 templat pesan).
+* Halaman publik `/`: Navbar, PoBanner (buka/tutup + fallback info PO ke chat admin), Hero, DietInfo, katalog dengan pencarian + filter kategori + filter vegan (client-side), MenuCard (label diet, tombol PO/Tanya Jadwal), EventSection, Footer. Skeleton & lazy loading aktif.
+* Ikon Instagram diganti `AtSign` (lucide menghapus brand icons).
+
+## [1.2] - 2026-11-23
+
+Pemeriksaan Tahap 1 (DEVELOPMENT_PLAN.md) & keputusan produk: tombol "Gabung Info PO" mengarah ke chat admin (grup/saluran WA belum tersedia).
+
+### Diubah (Changed)
+* **`PRD.md` FR-05, `ARCHITECTURE.md`, `database_schema.md`** — Field `whatsapp_group_link` kini boleh kosong; jika kosong, tombol info PO otomatis mengarah ke chat admin (`whatsapp_number`).
+* **`USER_FLOW.md` Alur 2, `test_plan.md` TC-11** — Hasil yang diharapkan disesuaikan dengan fallback chat admin.
+* **`PROJECT-BRIEF.md` bagian 8** — Kotak checklist 5 item terjawab dicentang (brand Dapoer Mama Ami, nomor WA, syarat acara, aturan bayar, area layanan).
+
 ## [1.1] - 2026-11-22
 
 Hasil review kelengkapan dokumen & rencana pengembangan (22 November 2026).

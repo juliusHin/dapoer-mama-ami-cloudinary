@@ -82,7 +82,7 @@ Seluruh poin di bawah ini merupakan **[Kebutuhan yang Sudah Disetujui]** untuk v
 * Website tidak memproses pembayaran secara otomatis, melainkan mengarahkan pengunjung ke WhatsApp Admin dengan draf pesan yang sudah terisi otomatis:
   * **Tombol Pesan Kuota PO (saat PO Buka):** Mengisi templat pesan berisi nama menu yang dipilih, jumlah porsi, dan pilihan catatan bahan (*Standar Tanpa Bawang / Request Pakai Bawang / Request 100% Vegan*).
   * **Tombol Konsultasi Acara:** Mengisi templat pesan untuk menanyakan ketersediaan tanggal acara, estimasi jumlah kotak, dan pilihan menu.
-  * **Tombol Gabung Info PO:** Mengarahkan pengunjung ke tautan Grup atau Saluran (*Channel*) WhatsApp resmi untuk mendapatkan notifikasi saat PO berikutnya dibuka.
+   * **Tombol Gabung Info PO:** Mengarahkan pengunjung ke tautan Grup atau Saluran (*Channel*) WhatsApp resmi untuk mendapatkan notifikasi saat PO berikutnya dibuka. *Fallback:* jika tautan grup belum tersedia, tombol membuka chat WhatsApp langsung ke admin.
 
 ### FR-06: Panel Admin Sederhana
 * Tersedia halaman khusus yang dilindungi kata sandi (*password*) bagi admin untuk:
@@ -94,6 +94,12 @@ Seluruh poin di bawah ini merupakan **[Kebutuhan yang Sudah Disetujui]** untuk v
 ### FR-07: Pratinjau Tautan Saat Dibagikan (Open Graph)
 * Saat tautan website dibagikan di WhatsApp atau Instagram, sistem harus menampilkan pratinjau berupa foto hidangan unggulan, nama usaha, dan deskripsi singkat (bukan tautan polos).
 * Pratinjau diatur melalui *tag meta* Open Graph statis pada `index.html` (foto memakai URL Cloudinary), tanpa layanan tambahan.
+
+### FR-08: Kampanye Musiman (Contoh: Hampers Natal)
+* Admin dapat mengaktifkan kampanye musiman dengan mengatur `campaign_name`, `campaign_start`, dan `campaign_end` pada dokumen pengaturan (`settings/general`).
+* Selama periode aktif, section kampanye tampil di halaman utama tepat di bawah papan status PO: berisi grid paket kampanye (disimpan sebagai menu dengan kategori khusus, misal `"Hampers Natal"`) dan tombol pemesanan WhatsApp dengan templat khusus (nama paket, jumlah box, tanggal ambil/kirim, ucapan kartu opsional).
+* Paket kampanye dijual terus selama periode kampanye dan tidak terpengaruh status buka/tutupnya PO kuliner.
+* Di luar periode, section kampanye otomatis disembunyikan tanpa perubahan kode; paketnya tetap tampil di katalog biasa.
 
 ---
 
@@ -178,6 +184,7 @@ Website dinyatakan selesai dan siap diluncurkan apabila memenuhi seluruh kriteri
 * Bagian etalase dokumentasi dan paket pesanan acara / nasi kotak.
 * Integrasi tombol WhatsApp dengan templat pesan otomatis dan tautan ke Grup/Saluran Info PO.
 * Halaman admin sederhana untuk kelola status PO dan data menu.
+* Kampanye musiman otomatis berbasis tanggal (contoh: Hampers Natal) dengan templat WhatsApp khusus.
 
 ### 9.2 Out-of-Scope (Tidak Termasuk di Versi Pertama — Ditunda ke Tahap Berikutnya)
 * **Notifikasi Otomatis (WhatsApp Blast / Email Newsletter):** Pengiriman pengingat jadwal PO otomatis berbayar dari sistem. *(Digantikan dengan tombol gabung Grup/Saluran WhatsApp).*

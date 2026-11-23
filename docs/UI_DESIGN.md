@@ -33,6 +33,7 @@ Penggunaan warna dibatasi pada kombinasi warna alam yang menenangkan sekaligus m
 | **Teks Utama** | *Dark Charcoal* (Abu Gelap) | `#262626` | Warna tulisan judul dan deskripsi (lebih lembut dan nyaman dibaca dibanding hitam pekat). |
 | **Teks Pendukung** | *Muted Stone* (Abu Kecokelatan) | `#66625E` | Warna keterangan tambahan, harga coret, atau catatan kaki. |
 | **Status PO Tutup** | *Soft Sand / Warm Gray* | `#EAE5DF` | Warna latar papan pengumuman saat **PO TUTUP** (tetap terlihat rapi dan ramah, bukan merah menyeramkan). |
+| **Aksen Kampanye Musiman** | *Holiday Red* (Merah Natal Lembut) | `#A63939` | Latar section kampanye musiman (mis. *Hampers Natal*) agar menonjol dari warna hijau brand. Hanya dipakai selama periode kampanye. |
 
 ---
 

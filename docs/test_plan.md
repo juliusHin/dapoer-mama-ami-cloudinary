@@ -84,7 +84,7 @@ Gunakan tabel di bawah ini sebagai daftar periksa (*checklist*) saat menguji apl
 | ----- | ----- | ----- | ----- | ----- | 
 | **TC-09** | Tombol pesan menu (PO Buka & Menu Aktif) | Pastikan status PO `buka` dan menu aktif PO. Tekan tombol **"Ikut PO via WhatsApp"** pada salah satu menu. | Aplikasi WhatsApp terbuka menuju nomor admin dengan draf pesan otomatis berisi nama menu, kolom jumlah porsi, dan pilihan bahan (*Tanpa Bawang / Pakai Bawang / 100% Vegan*). | `[ ]` | 
 | **TC-10** | Tombol menu arsip (PO Buka, Menu Tidak Ikut PO) | Saat PO `buka`, tekan tombol pada menu yang ditandai tidak ikut kloter PO minggu ini. | Tombol bertuliskan **"Tanya Jadwal Menu Ini"** dan mengarah ke WhatsApp dengan format pertanyaan jadwal. | `[ ]` | 
-| **TC-11** | Tombol Gabung Grup/Saluran Info PO | Saat PO `tutup`, tekan tombol **"Gabung Info Jadwal PO"** di papan status. | Browser langsung mengarahkan ke halaman undangan Grup atau Saluran WhatsApp resmi usaha Anda. | `[ ]` | 
+| **TC-11** | Tombol Gabung Grup/Saluran Info PO | Saat PO `tutup`, tekan tombol **"Gabung Info Jadwal PO"** di papan status. | Browser langsung mengarahkan ke halaman undangan Grup atau Saluran WhatsApp resmi usaha Anda (atau chat admin, bila tautan grup belum diisi). | `[ ]` | 
 | **TC-12** | Konsultasi Pesanan Acara / Nasi Kotak | Gulir ke bagian **Pesanan Acara**, periksa paket yang ada, lalu tekan tombol **"Konsultasi Acara via WhatsApp"**. | Aplikasi WhatsApp terbuka dengan draf pesan otomatis berisi kolom tanggal acara, estimasi jumlah kotak, dan preferensi bahan. | `[ ]` | 
 | **TC-19** | Pratinjau tautan (Open Graph) | Bagikan tautan website ke chat WhatsApp pribadi, lalu buka tautan yang sama dari bio/caption Instagram. | Tautan menampilkan gambar hidangan unggulan, nama usaha, dan deskripsi singkat (bukan tautan polos tanpa gambar). | `[ ]` | 
 
@@ -98,6 +98,14 @@ Gunakan tabel di bawah ini sebagai daftar periksa (*checklist*) saat menguji apl
 | **TC-16** | Edit harga & status aktif PO menu | Ubah harga salah satu menu atau matikan centang *"Ikut PO Minggu Ini"*, lalu simpan. | Perubahan harga dan status tombol langsung terbarui di halaman depan publik. | `[ ]` | 
 | **TC-17** | Tambah dokumentasi pesanan acara | Di tab **Kelola Galeri Acara**, unggah foto nasi kotak, isi keterangan paket & minimal order, lalu simpan. | Foto dan rincian paket acara langsung muncul di bagian **Pesanan Acara** pada halaman depan. | `[ ]` | 
 | **TC-18** | Keluar dari akun admin (*Logout*) | Tekan tombol **Keluar** di pojok atas dasbor admin. | Sesi admin berakhir dan halaman kembali ke tampilan publik atau halaman login. | `[ ]` | 
+
+### 4.5 Modul E: Kampanye Musiman (Hampers Natal)
+
+| ID | Skenario Uji | Langkah Pengujian | Hasil yang Diharapkan | Status | 
+| ----- | ----- | ----- | ----- | ----- | 
+| **TC-20** | Section kampanye tampil saat periode aktif | Pastikan `campaign_start` ≤ hari ini ≤ `campaign_end` pada `settings/general`, lalu buka halaman utama. | Section kampanye berwarna merah tampil di bawah papan status PO, berisi kartu paket hampers dan tombol pemesanan WhatsApp. | `[ ]` | 
+| **TC-21** | Section hilang di luar periode | Ubah `campaign_end` ke tanggal yang sudah lewat (mis. kemarin), lalu muat ulang halaman utama. | Section kampanye hilang otomatis; paket hampers tetap tampil di katalog biasa beserta chip filter kategorinya. | `[ ]` | 
+| **TC-22** | Tombol pesan paket hampers | Saat kampanye aktif, tekan tombol pesan pada salah satu kartu paket hampers. | WhatsApp terbuka dengan draf pesan berisi nama paket, jumlah box, tanggal ambil/kirim, dan ucapan kartu opsional. | `[ ]` | 
 
 ## 5. Pengujian Tampilan & Performa (UI/UX & Performance)
 
@@ -121,7 +129,7 @@ Gunakan tabel di bawah ini sebagai daftar periksa (*checklist*) saat menguji apl
 
 Website dinyatakan **LULUS UJI** dan siap dibagikan kepada pelanggan apabila seluruh syarat berikut terpenuhi:
 
-* \[ \] Seluruh pengujian pada **Modul A, B, C, dan D** (`TC-01` hingga `TC-19`) berstatus lulus tanpa kendala.
+* \[ \] Seluruh pengujian pada **Modul A, B, C, D, dan E** (`TC-01` hingga `TC-22`) berstatus lulus tanpa kendala.
 
 * \[ \] Seluruh pengujian keamanan (`SEC-01` hingga `SEC-04`) berhasil memblokir akses tidak sah.
 

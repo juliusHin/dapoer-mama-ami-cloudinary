@@ -59,8 +59,11 @@ Koleksi ini dirancang hanya memiliki **1 dokumen tunggal** dengan nama ID tetap 
 | `delivery_date` | `String` (Teks) | Tidak | `""` | Tanggal pengiriman makanan untuk kloter aktif (contoh: `"Sabtu, 28 November 2026"`). | 
 | `quota_status` | `String` (Teks) | Ya | `"tersedia"` | Penanda ketersediaan kuota: `"tersedia"`, `"hampir_habis"`, atau `"penuh"`. | 
 | `whatsapp_number` | `String` (Teks) | Ya | `"6281234567890"` | Nomor WhatsApp admin diawali kode negara `62` tanpa tanda `+` atau spasi. | 
-| `whatsapp_group_link` | `String` (Teks) | Tidak | `""` | Tautan undangan Grup atau Saluran WhatsApp resmi untuk pengumuman PO berikutnya. | 
+| `whatsapp_group_link` | `String` (Teks) | Tidak | `""` | Tautan undangan Grup atau Saluran WhatsApp resmi untuk pengumuman PO berikutnya. Boleh kosong: jika kosong, tombol info PO otomatis mengarah ke chat admin (`whatsapp_number`). | 
 | `kitchen_rules_summary` | `String` (Teks) | Ya | *(Teks standar)* | Penjelasan singkat standar dapur (vegetarian tanpa bawang, bisa *request* vegan/bawang). | 
+| `campaign_name` | `String` (Teks) | Tidak | `""` | Nama kampanye musiman (contoh: `"Hampers Natal 2026"`). Kosong = tidak ada kampanye. | 
+| `campaign_start` | `String` (Teks, tanggal ISO) | Tidak | `""` | Tanggal mulai kampanye tampil (contoh: `"2026-11-23"`). | 
+| `campaign_end` | `String` (Teks, tanggal ISO) | Tidak | `""` | Tanggal terakhir kampanye tampil (contoh: `"2026-12-25"`). Setelah tanggal ini section otomatis hilang. | 
 | `updated_at` | `Timestamp` | Ya | *(Waktu saat ini)* | Catatan waktu terakhir admin mengubah pengaturan PO. | 
 
 **Contoh Isi Dokumen (`settings/general`):**
@@ -74,6 +77,9 @@ Koleksi ini dirancang hanya memiliki **1 dokumen tunggal** dengan nama ID tetap 
   "whatsapp_number": "6287782238049",
   "whatsapp_group_link": "https://chat.whatsapp.com/ContohLinkGrupInfoPO",
   "kitchen_rules_summary": "Standar masakan kami adalah Vegetarian & Tanpa Bawang. Anda dapat melakukan request 100% Vegan (tanpa telur/susu) atau request Pakai Bawang saat memesan.",
+  "campaign_name": "Hampers Natal 2026",
+  "campaign_start": "2026-11-23",
+  "campaign_end": "2026-12-25",
   "updated_at": "2026-11-22T14:30:00Z"
 }
 ```
